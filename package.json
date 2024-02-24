@@ -6,11 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "typecheck": "tsc --noEmit",
     "eslint:check": "eslint src",
     "eslint:fix": "eslint --fix src",
     "prettier:check": "prettier --check src",
     "prettier:write": "prettier --write src",
-    "test": "jest --config tests/jest.config.js",
+    "test": "jest --config tests/jest.config.js --passWithNoTests",
     "test:watch": "yarn test --watch",
     "test:coverage": "yarn test --coverage"
   },
