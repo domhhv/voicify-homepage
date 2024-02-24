@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "eslint:check": "eslint src",
-    "eslint:fix": "eslint --fix src"
+    "eslint:fix": "eslint --fix src",
+    "prettier:check": "prettier --check src",
+    "prettier:write": "prettier --write src"
   },
   "dependencies": {
     "next": "14.1.0",
@@ -32,6 +34,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^3.1.0",
     "postcss": "^8",
+    "prettier": "^3.2.5",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   },
