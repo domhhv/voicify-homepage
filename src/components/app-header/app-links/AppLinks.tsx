@@ -14,11 +14,14 @@ const AppLinks = () => {
   const [activeLinkColor, setActiveLinkColor] = useState('');
   const [inactiveLinkColor, setInactiveLinkColor] = useState('');
   const screenSize = useScreenSize();
-  const [isVisible, setIsVisible] = useState(screenSize > 1280);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    setIsVisible(screenSize > 1280);
+    setIsVisible(screenSize < 1280);
+    setIsMobileMenuOpen(false);
   }, [screenSize]);
+  console.log('isVisible', isVisible);
 
   useEffect(() => {
     const isDarkTheme = window.matchMedia(
@@ -38,6 +41,7 @@ const AppLinks = () => {
     setIsDarkTheme(isDarkTheme);
     setActiveLinkColor(determiveActiveColor(isDarkTheme));
     setInactiveLinkColor(isDarkTheme ? '#646464' : '#808080');
+    setIsVisible(screenSize < 1280);
 
     const eventListener = (mediaQueryListEvent: MediaQueryListEvent) => {
       const newIsDarkTheme = mediaQueryListEvent.matches;
@@ -51,15 +55,15 @@ const AppLinks = () => {
     return () => {
       darkThemeMediaQuery.removeEventListener('change', eventListener);
     };
-  }, []);
+  }, [screenSize]);
 
   const toggleVisibility = () => {
-    setIsVisible((prevIsVisible) => !prevIsVisible);
+    setIsMobileMenuOpen((prevIsVisible) => !prevIsVisible);
   };
 
   const menuBackdropColor = isDarkTheme ? 'bg-black' : 'bg-white';
   const menuLinksClassName = clsx(
-    isVisible ? 'flex' : 'hidden',
+    isVisible && isMobileMenuOpen ? 'flex' : 'hidden',
     'flex-col',
     'pt-24',
     'space-x-0',
@@ -102,7 +106,7 @@ const AppLinks = () => {
             />
           );
         })}
-        {screenSize < 1280 && (
+        {isVisible && isMobileMenuOpen && (
           <button
             onClick={toggleVisibility}
             className="absolute top-24px right-24px"
