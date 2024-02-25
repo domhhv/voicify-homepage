@@ -25,10 +25,84 @@ body {
   }
 }
 
-.inactive-link {
-  color: #808080;
+.banner-text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
 
-  @media (prefers-color-scheme: dark) {
-    color: #646464;
+.hero-banner-heading {
+  color: white;
+  text-align: center;
+  font-feature-settings:
+    'ss03' on,
+    'ss06' on,
+    'ss01' on;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 80px;
+  letter-spacing: -1.6px;
+
+  @media (max-width: 1250px) {
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: -0.8px;
   }
+
+  @media (max-width: 900px) {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.48px;
+  }
+}
+
+.hero-banner-subheading {
+  color: white;
+  text-align: center;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings:
+    'ss03' on,
+    'ss06' on,
+    'ss01' on,
+    'salt' on;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 650;
+  line-height: 32px;
+
+  @media (max-width: 1250px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.banner-social-views-chip {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -40px;
+
+  @media (max-width: 900px) {
+    bottom: -70px;
+  }
+}
+
+.hero-banner-chip-text {
+  text-align: center;
+  font-feature-settings:
+    'ss03' on,
+    'ss06' on,
+    'ss01' on,
+    'salt' on;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 650;
+  line-height: 20px;
 }
