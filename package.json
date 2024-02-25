@@ -11,7 +11,7 @@
     "eslint:fix": "eslint --fix src",
     "prettier:check": "prettier --check src",
     "prettier:write": "prettier --write src",
-    "test": "jest --config tests/jest.config.js --passWithNoTests",
+    "test": "jest --config=tests/jest.config.js",
     "test:watch": "yarn test --watch",
     "test:coverage": "yarn test --coverage"
   },
@@ -53,10 +53,5 @@
     "tailwindcss": "^3.3.0",
     "ts-jest": "^29.1.2",
     "typescript": "^5"
-  },
-  "resolutions": {
-    "strip-ansi": "6.0.1",
-    "string-width": "4.2.2",
-    "wrap-ansi": "7.0.0"
   }
 }

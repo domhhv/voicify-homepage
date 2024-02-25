@@ -50,8 +50,6 @@ const AppLinks = () => {
     setIsVisible((prevIsVisible) => !prevIsVisible);
   };
 
-  console.log('screenSize', screenSize);
-
   const menuBackdropColor = isDarkTheme ? 'bg-black' : 'bg-white';
   const menuLinksClassName = clsx(
     isVisible ? 'flex' : 'hidden',
