@@ -21,7 +21,6 @@ const AppLinks = () => {
     setIsVisible(screenSize < 1280);
     setIsMobileMenuOpen(false);
   }, [screenSize]);
-  console.log('isVisible', isVisible);
 
   useEffect(() => {
     const isDarkTheme = window.matchMedia(

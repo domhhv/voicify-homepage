@@ -4,7 +4,7 @@ import { VoicifyLogo } from '../icons';
 
 const AppFooter = () => {
   return (
-    <footer className="flex flex-col px-0 xl:columns-2 md:flex-row md:px-84px py-40px border-t-light-gray border-t-2 md:space-x-6 text-gray-600">
+    <footer className="flex flex-col mt-64px px-0 xl:columns-2 md:flex-row md:px-84px py-40px border-t-light-gray border-t-2 md:space-x-6 text-gray-600">
       <div className="flex flex-col md:max-xl:flex-row xl:flex-row flex-1">
         <div className="flex flex-col items-center justify-between flex-1 md:items-start">
           <div className="flex flex-col">

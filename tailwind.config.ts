@@ -32,9 +32,11 @@ const config: Config = {
         'light-purple': '#F4EFFA',
       },
       spacing: {
+        '12px': '12px',
         '24px': '24px',
         '40px': '40px',
         '84px': '84px',
+        '64px': '64px',
       },
     },
   },
