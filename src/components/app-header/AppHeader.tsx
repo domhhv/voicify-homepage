@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import Image from 'next/image';
 
 import { getUser } from '../../services';
 import { VoicifyLogo } from '../icons';

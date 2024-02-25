@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "([ -d ./.git ] && husky install) || echo \"Skipping husky install since package does not have .git folder\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -15,10 +16,18 @@
     "test:watch": "yarn test --watch",
     "test:coverage": "yarn test --coverage"
   },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "typecheck",
+      "eslint",
+      "prettier --check"
+    ]
+  },
   "dependencies": {
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
     "clsx": "^2.1.0",
+    "husky": "^9.0.11",
     "lowdb": "^7.0.1",
     "next": "14.1.0",
     "react": "^18",
