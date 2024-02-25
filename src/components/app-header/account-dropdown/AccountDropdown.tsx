@@ -18,6 +18,7 @@ const AccountDropdown = ({ credits, avatarUrl }: AccountDropdownProps) => {
     'justify-center',
     'items-center'
   );
+
   return (
     <div className="flex space-x-2">
       <button className={creditsButtonClassName}>

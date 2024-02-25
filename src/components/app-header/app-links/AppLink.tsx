@@ -6,15 +6,15 @@ import { usePathname } from 'next/navigation';
 import { VoicifyLink } from './links';
 
 type AppLinkProps = {
-  activeColorLink: string;
-  inactiveColorLink: string;
+  activeLinkColor: string;
+  inactiveLinkColor: string;
   link: VoicifyLink;
 };
 
 const AppLink = ({
   link,
-  activeColorLink,
-  inactiveColorLink,
+  activeLinkColor,
+  inactiveLinkColor,
 }: AppLinkProps) => {
   const pathname = usePathname();
 
@@ -23,8 +23,8 @@ const AppLink = ({
   const Icon = link.icon;
 
   return (
-    <div key={crypto.randomUUID()} className={className}>
-      <Icon color={isCurrent ? activeColorLink : inactiveColorLink} />
+    <div className={className}>
+      <Icon color={isCurrent ? activeLinkColor : inactiveLinkColor} />
       <Link href={link.to}>{link.title}</Link>
     </div>
   );

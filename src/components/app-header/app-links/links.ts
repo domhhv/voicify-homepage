@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import {
   HomeIcon,
   VoiceIcon,
@@ -9,7 +11,7 @@ import {
 export type VoicifyLink = {
   title: string;
   to: string;
-  icon: (props: { color: string }) => JSX.Element;
+  icon: (props: { color: string }) => ReactNode;
 };
 
 const LINKS = [

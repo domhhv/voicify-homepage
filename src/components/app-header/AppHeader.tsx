@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { getUser } from '../../services';
 import { VoicifyLogo } from '../icons';
 
-import AccountDropdown from './account-dropdown/AccountDropdown';
+import { AccountDropdown } from './account-dropdown';
 import { AppLinks } from './app-links';
 
 const AppHeader = async () => {

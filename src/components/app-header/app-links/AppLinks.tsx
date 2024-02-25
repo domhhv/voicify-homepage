@@ -11,8 +11,8 @@ import LINKS from './links';
 
 const AppLinks = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const [activeColorLink, setActiveColorLink] = useState('');
-  const [inactiveColorLink, setInactiveColorLink] = useState('');
+  const [activeLinkColor, setActiveLinkColor] = useState('');
+  const [inactiveLinkColor, setInactiveLinkColor] = useState('');
   const screenSize = useScreenSize();
   const [isVisible, setIsVisible] = useState(screenSize > 1280);
 
@@ -28,15 +28,22 @@ const AppLinks = () => {
       '(prefers-color-scheme: dark)'
     );
 
+    const determiveActiveColor = (isDarkTheme: boolean) => {
+      return isDarkTheme ? '#ffffff' : '#000000';
+    };
+    const determineInactiveColor = (isDarkTheme: boolean) => {
+      return isDarkTheme ? '#646464' : '#808080';
+    };
+
     setIsDarkTheme(isDarkTheme);
-    setActiveColorLink(isDarkTheme ? '#ffffff' : '#000000');
-    setInactiveColorLink(isDarkTheme ? '#646464' : '#808080');
+    setActiveLinkColor(determiveActiveColor(isDarkTheme));
+    setInactiveLinkColor(isDarkTheme ? '#646464' : '#808080');
 
     const eventListener = (mediaQueryListEvent: MediaQueryListEvent) => {
       const newIsDarkTheme = mediaQueryListEvent.matches;
       setIsDarkTheme(newIsDarkTheme);
-      setActiveColorLink(newIsDarkTheme ? '#ffffff' : '#000000');
-      setInactiveColorLink(newIsDarkTheme ? '#646464' : '#808080');
+      setActiveLinkColor(determiveActiveColor(newIsDarkTheme));
+      setInactiveLinkColor(determineInactiveColor(newIsDarkTheme));
     };
 
     darkThemeMediaQuery.addEventListener('change', eventListener);
@@ -82,7 +89,7 @@ const AppLinks = () => {
         className="absolute top-24px right-24px xl:hidden"
         onClick={toggleVisibility}
       >
-        <HamburgerIcon color={activeColorLink} />
+        <HamburgerIcon color={activeLinkColor} />
       </button>
       <div className={menuLinksClassName}>
         {LINKS.map((link) => {
@@ -90,8 +97,8 @@ const AppLinks = () => {
             <AppLink
               key={link.to}
               link={link}
-              activeColorLink={activeColorLink}
-              inactiveColorLink={inactiveColorLink}
+              activeLinkColor={activeLinkColor}
+              inactiveLinkColor={inactiveLinkColor}
             />
           );
         })}
@@ -100,7 +107,7 @@ const AppLinks = () => {
             onClick={toggleVisibility}
             className="absolute top-24px right-24px"
           >
-            <CloseIcon color={activeColorLink} />
+            <CloseIcon color={activeLinkColor} />
           </button>
         )}
       </div>

@@ -24,7 +24,7 @@ export const get = <T extends object>(
 
 export const post = <T extends object>(
   path: string,
-  body: unknown,
+  body: Omit<T, 'id'>,
   headers: HeadersInit = {},
   options: RequestInit = {}
 ): Promise<T> => {
