@@ -6,3 +6,6 @@ export { default as PricingIcon } from './PricingIcon';
 export { default as VoicifyLogo } from './VoicifyLogo';
 export { default as HamburgerIcon } from './HamburgerIcon';
 export { default as CloseIcon } from './CloseIcon';
+export { default as TikTokIcon } from './TikTokIcon';
+export { default as YouTubeIcon } from './YouTubeIcon';
+export { default as InstagramIcon } from './InstagramIcon';
