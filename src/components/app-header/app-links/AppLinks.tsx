@@ -31,7 +31,7 @@ const AppLinks = () => {
       '(prefers-color-scheme: dark)'
     );
 
-    const determiveActiveColor = (isDarkTheme: boolean) => {
+    const determineActiveColor = (isDarkTheme: boolean) => {
       return isDarkTheme ? '#ffffff' : '#000000';
     };
     const determineInactiveColor = (isDarkTheme: boolean) => {
@@ -39,14 +39,14 @@ const AppLinks = () => {
     };
 
     setIsDarkTheme(isDarkTheme);
-    setActiveLinkColor(determiveActiveColor(isDarkTheme));
+    setActiveLinkColor(determineActiveColor(isDarkTheme));
     setInactiveLinkColor(isDarkTheme ? '#646464' : '#808080');
     setIsVisible(screenSize < 1280);
 
     const eventListener = (mediaQueryListEvent: MediaQueryListEvent) => {
       const newIsDarkTheme = mediaQueryListEvent.matches;
       setIsDarkTheme(newIsDarkTheme);
-      setActiveLinkColor(determiveActiveColor(newIsDarkTheme));
+      setActiveLinkColor(determineActiveColor(newIsDarkTheme));
       setInactiveLinkColor(determineInactiveColor(newIsDarkTheme));
     };
 
