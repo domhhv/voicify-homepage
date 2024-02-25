@@ -3,8 +3,13 @@
 import { useEffect, useState } from 'react';
 
 const useScreenSize = () => {
-  const initialWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-  const [screenSize, setScreenSize] = useState(initialWidth);
+  const [screenSize, setScreenSize] = useState(() => {
+    if (typeof window === 'undefined') {
+      return 0;
+    }
+
+    return window.innerWidth;
+  });
 
   useEffect(() => {
     const handleResize = (event: UIEvent) => {

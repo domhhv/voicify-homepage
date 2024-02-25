@@ -24,12 +24,17 @@ const config: Config = {
         purple: { 600: '#6F2DC1' },
         gray: { 600: '#808080', 700: '#646464' },
       },
+      borderColor: {
+        'light-gray': '#E5E5E5',
+      },
       colors: {
         purple: '#6F2DC1',
         'light-purple': '#F4EFFA',
       },
       spacing: {
         '24px': '24px',
+        '40px': '40px',
+        '84px': '84px',
       },
     },
   },

@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 
+import CreditsIcon from '../../icons/CreditsIcon';
+
 export type AccountDropdownProps = {
   credits: number;
   avatarUrl: string;
@@ -22,13 +24,7 @@ const AccountDropdown = ({ credits, avatarUrl }: AccountDropdownProps) => {
   return (
     <div className="flex space-x-2">
       <button className={creditsButtonClassName}>
-        <Image
-          color="grey"
-          src="/icons/credits.svg"
-          alt="Credits"
-          width={24}
-          height={24}
-        />
+        <CreditsIcon color={'#6F2DC1'} />
         <span role="user-credits" className="text-purple-600 font-semibold">
           {credits}
         </span>
