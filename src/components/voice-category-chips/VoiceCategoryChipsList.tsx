@@ -55,6 +55,7 @@ const VoiceCategoryChipsList = () => {
     'justify-center',
     'items-baseline'
   );
+
   return (
     <div className={chipsContainerClassName}>
       {VOICE_CATEGORIES.map((category) => {
@@ -69,52 +70,5 @@ const VoiceCategoryChipsList = () => {
     </div>
   );
 };
-
-// const VoiceCategoryChipsList = () => {
-//   return (
-//     <div className="flex flex-col space-y-4 mx-auto py-24 lg:flex-row lg:space-y-0 lg:space-x-4">
-//       <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 flex-1">
-//         <div className="flex flex-col space-y-4 flex-1 xl:flex-row xl:space-y-0 xl:space-x-4">
-//           {VOICE_CATEGORIES.slice(0, 2).map((category) => (
-//             <VoiceCategoryChip
-//               key={category.id}
-//               label={category.label}
-//               slug={category.slug}
-//             />
-//           ))}
-//         </div>
-//         <div className="flex flex-col space-y-4 flex-1 xl:flex-row xl:space-y-0 xl:space-x-4">
-//           {VOICE_CATEGORIES.slice(2, 4).map((category) => (
-//             <VoiceCategoryChip
-//               key={category.id}
-//               label={category.label}
-//               slug={category.slug}
-//             />
-//           ))}
-//         </div>
-//       </div>
-//       <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 flex-1">
-//         <div className="flex flex-col space-y-4 flex-1 xl:flex-row xl:space-y-0 xl:space-x-4">
-//           {VOICE_CATEGORIES.slice(4, 6).map((category) => (
-//             <VoiceCategoryChip
-//               key={category.id}
-//               label={category.label}
-//               slug={category.slug}
-//             />
-//           ))}
-//         </div>
-//         <div className="flex flex-col space-y-4 flex-1 xl:flex-row xl:space-y-0 xl:space-x-4">
-//           {VOICE_CATEGORIES.slice(6, 8).map((category) => (
-//             <VoiceCategoryChip
-//               key={category.id}
-//               label={category.label}
-//               slug={category.slug}
-//             />
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 
 export default VoiceCategoryChipsList;
