@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import VoiceCategoryChip from './VoiceCategoryChip';
 
 const VOICE_CATEGORIES = [
@@ -44,8 +46,17 @@ const VOICE_CATEGORIES = [
 ];
 
 const VoiceCategoryChipsList = () => {
+  const chipsContainerClassName = clsx(
+    'flex',
+    'flex-wrap',
+    'py-24',
+    'space-x-4',
+    'space-y-4',
+    'justify-center',
+    'items-baseline'
+  );
   return (
-    <div className="flex flex-wrap py-24 space-x-4 space-y-4 justify-center items-baseline">
+    <div className={chipsContainerClassName}>
       {VOICE_CATEGORIES.map((category) => {
         return (
           <VoiceCategoryChip
